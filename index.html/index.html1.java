@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Habit Tracker</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<h1>Habit Tracker</h1>
+
+<input type="text" id="habitInput" placeholder="Enter new habit">
+<button onclick="addHabit()">Add Habit</button>
+
+<ul id="habitList"></ul>
+
+<canvas id="progressChart"></canvas>
+
+<script src="script.js"></script>
+
+</body>
+</html>
