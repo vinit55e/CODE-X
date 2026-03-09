@@ -26,7 +26,13 @@ function updateChart() {
     },
     options: {
       responsive: true,
-      maintainAspectRatio: false
+      maintainAspectRatio: false,
+      animation: {
+        animateScale: true,
+        animateRotate: true,
+        duration: 1000,
+        easing: 'easeInOutQuart'
+      }
     }
   });
 }

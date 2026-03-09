@@ -19,8 +19,20 @@ habits.forEach((habit,index)=>{
 
 let li = document.createElement("li");
 
-li.innerHTML = habit.name +
-" <button onclick='markDone("+index+")'>Done</button>";
+let status = habit.done ? " (Done ✓)" : "";
+li.innerHTML = habit.name + status;
+
+if (!habit.done) {
+    li.innerHTML += " <button onclick='markDone("+index+")'>Done</button>";
+}
+
+// Add animation delay for staggered effect
+li.style.animationDelay = (index * 0.1) + 's';
+
+if (habit.done) {
+    li.style.opacity = '0.6';
+    li.style.textDecoration = 'line-through';
+}
 
 list.appendChild(li);
 
@@ -30,5 +42,6 @@ list.appendChild(li);
 
 function markDone(index){
 habits[index].done=true;
+displayHabits();
 updateChart();
 }
